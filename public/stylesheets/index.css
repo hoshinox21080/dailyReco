@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+table{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 450px;
+    margin-top: 60px;;
+}
+
+.month{
+    text-align: center;
+    font-size: 30px;
+    height: 50px;
+}
+
+#arrow-l{
+    position: relative;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    top: 30px; 
+    margin: 0;
+    color: #BE3455;
+    width: 50px;
+    font-size: 30px;
+    text-align: center;
+    border: none;
+    background-color: white;
+}
+
+#arrow-l:hover{
+    background-color: #BE3455;
+    color: white;
+    border-radius: 5px;
+}
+
+#arrow-r{
+    position: relative;
+    transform: translate(-50%, -50%);
+    left: 67%;
+    top: 30px;
+    color: #BE3455;
+    width: 50px;
+    font-size: 30px;
+    text-align: center;
+    border: none;
+    background-color: white;
+}
+
+#arrow-r:hover{
+    background-color: #BE3455;
+    color: white;
+    border-radius: 5px;
+}
+
+.week{
+    height: 40px;
+    background-color: #BE3455;
+    color: white;
+    text-align: center;
+    
+}
+
+.day{
+    width: 100px;
+    height: 120px;;
+    vertical-align: top;
+    border: solid #666 1px;
+}
+
+.day:hover{
+    background-color: rgba(190, 52, 85, 0.2);
+}
+
+.empty{
+    width: 100px;
+    height: 120px;;
+    vertical-align: top;
+    border: solid #666 1px;
+}

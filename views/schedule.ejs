@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/stylesheets/share.css" type="text/css">
+        <link rel="stylesheet" href="/stylesheets/schedule.css" type="text/css">
+        
+    </head>
+
+    <body>
+        <h1>Daily Reco</h1>
+        <div id="scheduleYear">年</div>
+        <div id="scheduleDate">月日</div>
+
+        <section class="box" id="box-schedule">
+            <div class="sen">
+                <div class="info">Schedule</div>
+                <div class="daia"></div>
+            </div>
+            <div id="scheduleDisplayArea"></div>
+            <div class="white"></div>
+            <% scheduleRows.forEach(row => { %>
+                <div class="content">
+                    <div class="title">タイトル: <%= row.title %></div>
+                    <% if (row.allDay === 1) { %>
+                        <div class="time" id="allDay">（終日）</div>
+                    <% } else { %>
+                        <div class="time" id="time_num">（ <%= row.timeStart%> 〜 <%= row.timeEnd %> ）</div>
+                    <% } %>
+                    <div class="content_memo">メモ: <%= row.memo %></div>
+                    <div id="ball" style="background-color: <%= row.color %>;"></div>
+                </div>
+            <% }); %>
+
+            <div class="function_name" id="add_schedule">予定を追加</div>
+            <form action="schedule" method="post" id="schedule_set">
+                <p class="add_title">タイトル<input type="text" name="title"></p>
+                <p class="add_shujitu">終日
+                    <input id="allDayInput" class="toggle_input" type="checkbox" name="allDay" value="1"></input>
+                    <label for="allDayInput" class="toggle_label"></label>
+                </p>
+                <p class="add_time">時間
+                    <p id="start" class="time_set">開始<input type="time" class="time_input" name="startTime" value=""></input></p>
+                    <p id="end" class="time_set">終了<input type="time" class="time_input" name="endTime" value=""></input></p>
+                </p>
+                <p id="chose_color">色<input type="color" name="color" value=""></input></p>
+                <p class="memo">メモ<textarea name="memo"></textarea></p>
+            </form>
+            
+            <div class="add_button" id="add_buttonSchedule" type="submit">決定</div>
+        </section>
+
+        <section class="box" id="box-daily">
+            <div class="sen">
+                <div class="info">Daily</div>
+                <div class="daia"></div>
+            </div>
+            <div class="function_name" id="add_photo">写真の追加</div>
+            <% if (isDiaryEmpty) { %>
+                <!-- 日記データが存在しない場合 -->
+                <div class="photo_button" style="background-image: url('/images/camera.png');">
+                    <div class="no_img">No Image ...<br>クリックで写真を追加</div>
+                    <input type="file" class="imageInput" style="display: none;">
+                </div>
+                <textarea class="daily_box" name="dailyContent"></textarea>
+            <% } else { %>
+                <% dailyRows.forEach(row => { %>
+                    <!-- 日記データが存在する場合 -->
+                    <div class="photo_button" style="background-image: url('/images/<%= row.image %>');">
+                        <input type="file" class="imageInput" style="display: none;">
+                    </div>
+                    <textarea class="daily_box" name="dailyContent"><%= row.daily %></textarea>
+                <% }); %>
+            <% } %>
+            <div class="function_name" id="todays_daily">今日の出来事</div>
+            <div class="add_button" id="add_buttonDaily">決定</div>
+        </section>
+
+        <script>
+            var isDiaryEmpty = <%= JSON.stringify(isDiaryEmpty) %>;
+            
+            // 日記が存在しない場合、代替コンテンツを挿入する
+            if (isDiaryEmpty) {
+                var noImgContainer = document.getElementById('noImgContainer');
+                if (noImgContainer) {
+                    noImgContainer.style.display = 'none';
+                }
+            }
+        </script>
+        <script src="/javascripts/schedule.js"></script>
+    </body>
+
+    <footer>
+
+    </footer>
+</html>

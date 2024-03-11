@@ -1,0 +1,325 @@
+@charset "utf-8";
+
+body{
+    position: relative;
+    height: 1500px;
+}
+
+#scheduleYear{
+    font-size: 20px;
+    color: 888888;
+}
+
+#scheduleDate{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    font-size: 30px;;
+}
+
+.menu_but a {
+    background: #eee;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    z-index:0;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: large;
+    border: solid 1px;
+}
+.menu_but a:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    background: #be3455;
+    transition: .3s;
+    left:0;
+    border-radius: 10px;
+}
+.menu_but a:hover {
+    color: #FFF;
+}
+.menu_but a:hover:before {
+    width: 100%;
+    z-index: -1;
+}
+
+#schedule {
+    margin-left: 70%;
+    margin-top: -80px;
+    width: 10%;
+}
+
+#daily {
+    margin-left: 85%;
+    margin-top: -44px;
+    width: 10%;
+}
+
+.box{
+    width: 90%;
+    height: 600px;
+    border: solid #000 1px;
+    box-shadow: #666 0 0 10px inset;
+}
+
+#box-schedule {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 450px;
+}
+
+#box-daily {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 1100px;
+}
+
+.sen {
+    width: 300px;
+    height: 3px;
+    background-color: #be3455;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 13%;
+    top: 15%;
+}
+
+.daia {
+    width: 30px;
+    height: 30px;
+    background-color: #be3455;
+    position: absolute;
+    transform: rotate(45deg);
+    top: -450%;
+    left: 100%;
+}
+
+.info {
+    font-size: 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: -900%;
+}
+
+.function_name {
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.white {
+  width: 50%;
+  height: 120px;
+}
+
+.content {
+    margin: 10px;
+    width: 40%;
+    font-size: 20px;
+    border-bottom: #000 solid 1px;
+}
+
+.content .time {
+  width: 50%;
+  margin-left: 50%;
+  margin-top: -30px;
+}
+
+#ball {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  position: absolute;
+  transform: translate(-50px, -50px);
+  left: 40%;
+}
+
+#add_schedule {
+    left: 50%;
+    top: 20%;
+}
+
+form {
+    width: 45%;
+    height: 70%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 70%;
+    top: 60%;
+}
+
+.add_title {
+    font-size: 25px;
+    display: inline;
+    position: relative;
+}
+
+.add_title input {
+    height: 35px;
+    position: absolute;
+    transform: translate(0%, -50%);
+    top: 50%;
+    left: 110%;
+    border: solid 1px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.add_shujitu {
+    font-size: 25px;
+    position: relative;
+}
+
+#allDayInput[type="checkbox"] {
+  width: 25px; /* チェックボックスの幅 */
+  height: 25px; /* チェックボックスの高さ */
+}
+
+  .add_time {
+    display: inline;
+    font-size: 25px;
+
+  }
+
+  .time_set {
+    display: inline;
+    font-size: 25px;
+    position: relative;
+  }
+
+  p#start {
+    margin: 40px;
+  }
+
+  p#end {
+    margin: 120px;
+  }
+
+  .time_input {
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 15px;
+    margin-left: 20px;
+    font-size: 25px;
+    border: solid 1px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  #chose_color {
+    font-size: 25px;
+  }
+
+  .memo {
+    font-size: 25px;
+  }
+
+  .memo textarea {
+    height: 150px;
+    width: 500px;
+    margin-left: 40px;
+    vertical-align: top;
+    border-radius: 8px;
+    resize: none;
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  .add_button {
+    border: solid 3px #be3455;
+    height: 60px;
+    width: 100px;
+    border-radius: 5px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 93%; 
+    font-size: 30px;
+    font-weight: bold;
+    color: #be3455;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: #aaa 3px 3px 3px;
+  }
+
+  .add_button:hover {
+    background-color: #be3455;
+    color: #fff;
+    box-shadow: none;
+  }
+
+  #add_buttonSchedule{
+    top: 88%;
+  }
+
+  #add_photo{
+    left: 10%;
+    top: 25%;
+  }
+
+  .photo_button {
+    height: 350px;
+    width: 350px;
+    border: solid 1px;
+    margin-top: 175px;
+    margin-left: 5%;
+    position: relative;
+    background-color: #ccc;
+    background-size: cover; /* 画像を要素に合わせて表示 */
+    background-repeat: no-repeat; /* 画像を繰り返し表示しない */
+  }
+
+  .photo_button img {
+    width: 130px;
+    height: 100px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 50%;
+  }
+
+  .no_img {
+    width: 300px;
+    font-size: 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 50%;
+    color: #444;
+    text-align: center;
+  }
+
+  #todays_daily{
+    left: 40%;
+    top: 25%;
+  }
+
+  .daily_box {
+    height: 350px;
+    width: 800px;
+    border: 1px solid;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 350px;
+    left: 900px;
+    resize: none;
+    font-size: 20px;
+    padding: 5px;
+  }
